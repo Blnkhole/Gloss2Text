@@ -1,0 +1,21 @@
+Loading weights: 100%
+ 517/517 [00:00<00:00, 766.49it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+enc_dec
+Used vocab size: 1796
+DATA SIZE: 1190
+SAMPLE: ở đó phong cảnh hùng vĩ -> Vâng. Phong cảnh ở đó thật hùng vĩ.
+Building similarity matrix for SALS...
+Similarity matrix shape: torch.Size([1796, 1796])
+bleu: 43.7483
+bleu_1: 81.7954
+bleu_2: 58.5955
+bleu_3: 43.5198
+bleu_4: 33.5870
+chrf: 61.3991
+chrf++: 61.5053
+rouge1: 82.6067
+rouge2: 68.8730
+rougeL: 77.1395
+Complete!

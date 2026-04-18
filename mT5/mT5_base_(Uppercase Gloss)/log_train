@@ -1,0 +1,371 @@
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_auth.py:93: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+config.json: 100%
+ 702/702 [00:00<00:00, 16.2kB/s]
+tokenizer_config.json: 100%
+ 376/376 [00:00<00:00, 7.48kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+spiece.model: 100%
+ 4.31M/4.31M [00:00<00:00, 28.0MB/s]
+special_tokens_map.json: 100%
+ 65.0/65.0 [00:00<00:00, 1.66kB/s]
+<pad> 0
+Map: 100%
+ 9518/9518 [00:04<00:00, 1910.43 examples/s]
+Map: 100%
+ 1190/1190 [00:00<00:00, 3112.60 examples/s]
+Bạn sẽ rất hài lòng.</s>
+pytorch_model.bin: 100%
+ 2.33G/2.33G [00:21<00:00, 94.1MB/s]
+Exception in thread Thread-auto_conversion:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 116, in auto_conversion
+    raise e
+  File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 95, in auto_conversion
+    sha = get_conversion_pr_reference(api, pretrained_model_name_or_path, **cached_file_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 71, in get_conversion_pr_reference
+    spawn_conversion(token, private, model_id)
+  File "/usr/local/lib/python3.12/dist-packages/transformers/safetensors_conversion.py", line 47, in spawn_conversion
+    result = httpx.post(sse_url, follow_redirects=True, json=data).json()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/httpx/_models.py", line 832, in json
+    return jsonlib.loads(self.content, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Loading weights: 100%
+ 284/284 [00:00<00:00, 351.54it/s, Materializing param=shared.weight]
+The tied weights mapping and config for this model specifies to tie shared.weight to encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+generation_config.json: 100%
+ 147/147 [00:00<00:00, 2.80kB/s]
+Downloading builder script: 
+ 5.94k/? [00:00<00:00, 115kB/s]
+Downloading extra modules: 
+ 4.07k/? [00:00<00:00, 94.0kB/s]
+Downloading extra modules: 
+ 3.34k/? [00:00<00:00, 103kB/s]
+Downloading builder script: 
+ 6.14k/? [00:00<00:00, 505kB/s]
+Downloading builder script: 
+ 9.01k/? [00:00<00:00, 686kB/s]
+ [3674/4470 4:22:57 < 57:00, 0.23 it/s, Epoch 12.33/15]
+Epoch	Training Loss	Validation Loss	Bleu	Chrf	Rouge1	Rouge2	Rougel
+1	25.077559	1.500740	17.978230	41.343179	72.324114	50.722310	61.215601
+2	15.763815	1.222035	24.438796	48.178773	77.067199	57.404410	66.950151
+3	13.499688	1.136513	27.339160	50.469215	78.696913	59.796166	69.135118
+4	12.179346	1.081937	29.268846	52.001852	79.725556	61.562416	70.208666
+5	11.304867	1.028051	31.043068	53.616391	80.194572	62.493990	70.965676
+6	10.539634	0.997090	31.844555	54.042701	80.549027	63.142845	71.704038
+7	10.110444	0.967716	32.804208	54.942034	80.977169	63.808871	72.011676
+8	10.039149	0.964401	32.554219	54.745073	80.645282	63.389482	72.009018
+9	9.482047	0.941473	34.445679	55.852149	81.268385	64.511497	72.794977
+10	9.253624	0.932640	34.881312	56.181909	81.571601	64.988494	73.163649
+11	8.940417	0.919807	34.736666	56.037539	81.543278	64.959069	72.978687
+12	8.778243	0.912573	35.419804	56.501555	81.821639	65.188121	73.236417
+Writing model shards: 100%
+ 1/1 [02:17<00:00, 137.22s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: TRANG web giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Tôi có thể kiểm tra cho tôi?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi có việc nhận tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt tốt nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hồ hất lây.
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:59<00:00, 59.83s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Chúng tôi có thể kiểm tra cho tôi?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh của chúm đường hô hấp lây rất nhiều.
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:51<00:00, 51.10s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Vâng, những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Được rồi, tôi có thể kiểm tra cho tôi?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hấp lây rất nhộn.
+------------------------------
+Writing model shards: 100%
+ 1/1 [01:03<00:00, 63.25s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Được rồi, tôi có thể kiểm tra cho tôi?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt. Tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây rất nhễm.
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:56<00:00, 56.44s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Tôi có thể kiểm tra cho tôi?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt, tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây rất nhộn.
+------------------------------
+Writing model shards: 100%
+ 1/1 [01:11<00:00, 71.76s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Tôi có thể kiểm tra cho tôi?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt, tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây nhiệm rất nhanh.
+------------------------------
+Writing model shards: 100%
+ 1/1 [01:13<00:00, 73.66s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Tôi có thể kiểm tra cho tôi?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt, tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây rất nhễm.
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:57<00:00, 57.88s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Vâng, những trang web cẩn thận giả mạo ngân hàng lừa đảo.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Tôi có thể kiểm tra cho tôi?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt, tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây nhiệm rất nhanh.
+------------------------------
+Writing model shards: 100%
+ 1/1 [01:00<00:00, 60.36s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Cho tôi kiểm tra?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt, tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây nhiệm rất nhanh.
+------------------------------
+Writing model shards: 100%
+ 1/1 [01:03<00:00, 63.20s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Cho tôi kiểm tra?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt, tối nay là 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây nhiệm rất nhanh.
+------------------------------
+Writing model shards: 100%
+ 1/1 [01:07<00:00, 67.54s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Cho tôi kiểm tra?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt, tối nay giờ 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây nhiễm rất nhanh.
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:33<00:00, 33.12s/it]
+
+===== SAMPLES =====
+G: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+R: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+P: Những trang web cần giả mạo ngân hàng lừa đảo cẩn thận.
+------------------------------
+G: CHO TÔI KIỂM TRA ?
+R: Cho tôi kiểm tra nhé?
+P: Cho tôi kiểm tra?
+------------------------------
+G: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+R: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+P: Tôi đã nhận công việc. Tôi cảm thấy chán.
+------------------------------
+G: TỐT TỐI NAY GIỜ 8
+R: Tốt, 8 giờ tối nay.
+P: Tốt, tối nay là 8 giờ.
+------------------------------
+G: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+R: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+P: Bệnh cúm đường hô hấp lây nhiệm rất nhanh.
+------------------------------

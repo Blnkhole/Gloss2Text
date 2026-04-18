@@ -1,0 +1,29 @@
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%
+ 517/517 [00:00<00:00, 543.98it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+enc_dec
+Used vocab size: 1796
+DATA SIZE: 1190
+SAMPLE: ở đó phong cảnh hùng vĩ -> Vâng. Phong cảnh ở đó thật hùng vĩ.
+Building similarity matrix for SALS...
+Similarity matrix shape: torch.Size([1796, 1796])
+bleu: 42.2387
+bleu_1: 81.3810
+bleu_2: 57.5155
+bleu_3: 41.8795
+bleu_4: 31.5981
+chrf: 60.5911
+chrf++: 60.6867
+rouge1: 82.2573
+rouge2: 68.4439
+rougeL: 76.5610
+Complete!

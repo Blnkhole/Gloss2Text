@@ -1,0 +1,18 @@
+Loading weights: 100%
+ 517/517 [00:00<00:00, 755.87it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+enc_dec
+Used vocab size: 1796
+Similarity matrix shape: torch.Size([1796, 1796])
+bleu: 42.0392
+bleu_1: 81.9346
+bleu_2: 58.2199
+bleu_3: 42.3584
+bleu_4: 31.8397
+chrf: 60.1935
+chrf++: 60.3701
+rouge1: 82.0446
+rouge2: 68.3749
+rougeL: 76.6552
+Complete!

@@ -1,0 +1,287 @@
+Loading weights: 100%
+ 517/517 [00:01<00:00, 372.25it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+enc_dec
+Used vocab size: 3175
+DATA SIZE: 9518
+SAMPLE: bạn hài lòng sẽ -> Bạn sẽ rất hài lòng.
+Building similarity matrix for SALS...
+Similarity matrix shape: torch.Size([3175, 3175])
+enc_dec
+Used vocab size: 1779
+DATA SIZE: 1190
+SAMPLE: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần -> Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+Building similarity matrix for SALS...
+Similarity matrix shape: torch.Size([1779, 1779])
+enc_dec
+Used vocab size: 1796
+DATA SIZE: 1190
+SAMPLE: ở đó phong cảnh hùng vĩ -> Vâng. Phong cảnh ở đó thật hùng vĩ.
+Building similarity matrix for SALS...
+Similarity matrix shape: torch.Size([1796, 1796])
+Starting training...
+Epoch 1: 100%|██████████| 1190/1190 [11:22<00:00,  1.74it/s, avg_loss=3.6600]
+
+Average Epoch 1 Loss: 3.6600
+Evaluating: 100%|██████████| 75/75 [01:37<00:00,  1.30s/it]
+
+--- Evaluation Metrics ---
+{'bleu': 36.04140889029912, 'bleu_1': 80.60703733548213, 'bleu_2': 53.17635270541082, 'bleu_3': 36.059606415652375, 'bleu_4': 25.989740891753254, 'chrf': 56.441554020911944, 'chrf++': 56.47902522031202, 'rouge1': np.float64(81.08980516276533), 'rouge2': np.float64(65.31619945192524), 'rougeL': np.float64(73.40750889123117)}
+
+Example 1
+GLOSS: bạn làm sai chỗ làm phản ứng thế nào
+REF  : Thái độ của bạn khi làm sai ở nơi làm việc?
+PRED : Bạn làm sai chỗ nào?
+
+Example 2
+GLOSS: bạn nói đúng bạn nói chuyện với họ
+REF  : Có lẽ bạn nói đúng. Vâng, bạn có thể nói chuyện với họ.
+PRED : Bạn nói đúng. Bạn có thể nói chuyện với họ.
+
+Example 3
+GLOSS: giá của bạn thảo luận được không ?
+REF  : Giá của bạn có thể thương lượng không?
+PRED : Giá của bạn có thể thảo luận được không?
+
+Example 4
+GLOSS: mẹ bạn thì sao bà giúp bạn không
+REF  : Còn mẹ bạn thì sao? Bà ấy có giúp bạn không?
+PRED : Mẹ bạn có thể giúp bạn không?
+
+Example 5
+GLOSS: nó thông tin nào nhận có không ?
+REF  : Nó có nhận bất kỳ kênh kỹ thuật số nào không?
+PRED : Nó có thông tin nào nhận không?
+New best BLEU: 36.0414, saving model...
+Epoch 2: 100%|██████████| 1190/1190 [11:25<00:00,  1.74it/s, avg_loss=2.6182]
+
+Average Epoch 2 Loss: 2.6182
+Evaluating: 100%|██████████| 75/75 [01:35<00:00,  1.27s/it]
+
+--- Evaluation Metrics ---
+{'bleu': 41.45412522855053, 'bleu_1': 82.12496704455576, 'bleu_2': 58.10187457061537, 'bleu_3': 42.271363484831646, 'bleu_4': 31.86067358176463, 'chrf': 59.99477841777876, 'chrf++': 60.07275827236065, 'rouge1': np.float64(81.9101348631955), 'rouge2': np.float64(67.87664576487325), 'rougeL': np.float64(75.86411583901793)}
+
+Example 1
+GLOSS: bạn làm sai chỗ làm phản ứng thế nào
+REF  : Thái độ của bạn khi làm sai ở nơi làm việc?
+PRED : Bạn phản ứng thế nào khi làm sai chỗ?
+
+Example 2
+GLOSS: bạn nói đúng bạn nói chuyện với họ
+REF  : Có lẽ bạn nói đúng. Vâng, bạn có thể nói chuyện với họ.
+PRED : Bạn nói đúng. Hãy nói chuyện với họ.
+
+Example 3
+GLOSS: giá của bạn thảo luận được không ?
+REF  : Giá của bạn có thể thương lượng không?
+PRED : Giá của bạn có thể thảo luận được không?
+
+Example 4
+GLOSS: mẹ bạn thì sao bà giúp bạn không
+REF  : Còn mẹ bạn thì sao? Bà ấy có giúp bạn không?
+PRED : Mẹ bạn thì sao? Bà có thể giúp bạn không?
+
+Example 5
+GLOSS: nó thông tin nào nhận có không ?
+REF  : Nó có nhận bất kỳ kênh kỹ thuật số nào không?
+PRED : Nó có nhận được thông tin nào không?
+New best BLEU: 41.4541, saving model...
+Epoch 3: 100%|██████████| 1190/1190 [11:24<00:00,  1.74it/s, avg_loss=2.4826]
+
+Average Epoch 3 Loss: 2.4826
+Evaluating: 100%|██████████| 75/75 [01:35<00:00,  1.27s/it]
+
+--- Evaluation Metrics ---
+{'bleu': 42.73620854271155, 'bleu_1': 82.69700139470014, 'bleu_2': 59.03520715814044, 'bleu_3': 43.38979322481302, 'bleu_4': 32.96633763604151, 'chrf': 61.0030188707809, 'chrf++': 61.0903473056838, 'rouge1': np.float64(82.56074879490802), 'rouge2': np.float64(68.78526227962716), 'rougeL': np.float64(76.68546728516642)}
+
+Example 1
+GLOSS: bạn làm sai chỗ làm phản ứng thế nào
+REF  : Thái độ của bạn khi làm sai ở nơi làm việc?
+PRED : Bạn phản ứng thế nào khi làm sai chỗ?
+
+Example 2
+GLOSS: bạn nói đúng bạn nói chuyện với họ
+REF  : Có lẽ bạn nói đúng. Vâng, bạn có thể nói chuyện với họ.
+PRED : Bạn nói đúng. Hãy nói chuyện với họ.
+
+Example 3
+GLOSS: giá của bạn thảo luận được không ?
+REF  : Giá của bạn có thể thương lượng không?
+PRED : Giá của bạn có thể thảo luận được không?
+
+Example 4
+GLOSS: mẹ bạn thì sao bà giúp bạn không
+REF  : Còn mẹ bạn thì sao? Bà ấy có giúp bạn không?
+PRED : Mẹ bạn thì sao? Bà có thể giúp bạn không?
+
+Example 5
+GLOSS: nó thông tin nào nhận có không ?
+REF  : Nó có nhận bất kỳ kênh kỹ thuật số nào không?
+PRED : Nó có nhận thông tin nào không?
+New best BLEU: 42.7362, saving model...
+Epoch 4: 100%|██████████| 1190/1190 [11:23<00:00,  1.74it/s, avg_loss=2.4145]
+
+Average Epoch 4 Loss: 2.4145
+Evaluating: 100%|██████████| 75/75 [01:35<00:00,  1.27s/it]
+
+--- Evaluation Metrics ---
+{'bleu': 43.881392797799464, 'bleu_1': 82.78652858759028, 'bleu_2': 59.968938070277616, 'bleu_3': 44.848019313069244, 'bleu_4': 34.59111559818274, 'chrf': 61.65144503838438, 'chrf++': 61.708946158099835, 'rouge1': np.float64(82.72761400239166), 'rouge2': np.float64(69.37100778741208), 'rougeL': np.float64(77.15299825002579)}
+
+Example 1
+GLOSS: bạn làm sai chỗ làm phản ứng thế nào
+REF  : Thái độ của bạn khi làm sai ở nơi làm việc?
+PRED : Bạn đã làm sai chỗ nào và phản ứng thế nào?
+
+Example 2
+GLOSS: bạn nói đúng bạn nói chuyện với họ
+REF  : Có lẽ bạn nói đúng. Vâng, bạn có thể nói chuyện với họ.
+PRED : Bạn nói đúng. Hãy nói chuyện với họ.
+
+Example 3
+GLOSS: giá của bạn thảo luận được không ?
+REF  : Giá của bạn có thể thương lượng không?
+PRED : Giá của bạn có thể thảo luận được không?
+
+Example 4
+GLOSS: mẹ bạn thì sao bà giúp bạn không
+REF  : Còn mẹ bạn thì sao? Bà ấy có giúp bạn không?
+PRED : Mẹ bạn thì sao? Bà có thể giúp bạn không?
+
+Example 5
+GLOSS: nó thông tin nào nhận có không ?
+REF  : Nó có nhận bất kỳ kênh kỹ thuật số nào không?
+PRED : Nó có nhận thông tin nào không?
+New best BLEU: 43.8814, saving model...
+Epoch 5: 100%|██████████| 1190/1190 [11:24<00:00,  1.74it/s, avg_loss=2.3678]
+
+Average Epoch 5 Loss: 2.3678
+Evaluating: 100%|██████████| 75/75 [01:37<00:00,  1.29s/it]
+
+--- Evaluation Metrics ---
+{'bleu': 44.187942946889926, 'bleu_1': 82.51586348825245, 'bleu_2': 59.51107715813598, 'bleu_3': 44.29002370178841, 'bleu_4': 33.97182402372714, 'chrf': 62.10028494851845, 'chrf++': 62.16512221507002, 'rouge1': np.float64(82.9070759250404), 'rouge2': np.float64(69.62277618210112), 'rougeL': np.float64(77.35213552305846)}
+
+Example 1
+GLOSS: bạn làm sai chỗ làm phản ứng thế nào
+REF  : Thái độ của bạn khi làm sai ở nơi làm việc?
+PRED : Bạn đã làm sai chỗ nào và phản ứng thế nào?
+
+Example 2
+GLOSS: bạn nói đúng bạn nói chuyện với họ
+REF  : Có lẽ bạn nói đúng. Vâng, bạn có thể nói chuyện với họ.
+PRED : Bạn nói đúng. Hãy nói chuyện với họ.
+
+Example 3
+GLOSS: giá của bạn thảo luận được không ?
+REF  : Giá của bạn có thể thương lượng không?
+PRED : Giá của bạn có thể thảo luận được không?
+
+Example 4
+GLOSS: mẹ bạn thì sao bà giúp bạn không
+REF  : Còn mẹ bạn thì sao? Bà ấy có giúp bạn không?
+PRED : Mẹ bạn thì sao? Bà có thể giúp bạn không?
+
+Example 5
+GLOSS: nó thông tin nào nhận có không ?
+REF  : Nó có nhận bất kỳ kênh kỹ thuật số nào không?
+PRED : Nó có nhận thông tin nào không?
+New best BLEU: 44.1879, saving model...
+Epoch 6: 100%|██████████| 1190/1190 [11:24<00:00,  1.74it/s, avg_loss=2.3370]
+
+Average Epoch 6 Loss: 2.3370
+Evaluating: 100%|██████████| 75/75 [01:36<00:00,  1.29s/it]
+
+--- Evaluation Metrics ---
+{'bleu': 44.2108969272429, 'bleu_1': 82.83839779005525, 'bleu_2': 59.94804695016356, 'bleu_3': 44.7522816166884, 'bleu_4': 34.3773396556027, 'chrf': 61.948983444151054, 'chrf++': 62.042240032415265, 'rouge1': np.float64(82.91437430458161), 'rouge2': np.float64(69.58048072198264), 'rougeL': np.float64(77.4785884303646)}
+
+Example 1
+GLOSS: bạn làm sai chỗ làm phản ứng thế nào
+REF  : Thái độ của bạn khi làm sai ở nơi làm việc?
+PRED : Bạn đã làm sai chỗ nào và phản ứng thế nào?
+
+Example 2
+GLOSS: bạn nói đúng bạn nói chuyện với họ
+REF  : Có lẽ bạn nói đúng. Vâng, bạn có thể nói chuyện với họ.
+PRED : Bạn nói đúng. Hãy nói chuyện với họ.
+
+Example 3
+GLOSS: giá của bạn thảo luận được không ?
+REF  : Giá của bạn có thể thương lượng không?
+PRED : Giá của bạn có thể thảo luận được không?
+
+Example 4
+GLOSS: mẹ bạn thì sao bà giúp bạn không
+REF  : Còn mẹ bạn thì sao? Bà ấy có giúp bạn không?
+PRED : Mẹ bạn thì sao? Bà có thể giúp bạn không?
+
+Example 5
+GLOSS: nó thông tin nào nhận có không ?
+REF  : Nó có nhận bất kỳ kênh kỹ thuật số nào không?
+PRED : Nó có nhận thông tin nào không?
+New best BLEU: 44.2109, saving model...
+Epoch 7: 100%|██████████| 1190/1190 [11:24<00:00,  1.74it/s, avg_loss=2.3188]
+
+Average Epoch 7 Loss: 2.3188
+Evaluating: 100%|██████████| 75/75 [01:36<00:00,  1.28s/it]
+
+--- Evaluation Metrics ---
+{'bleu': 44.30393903243213, 'bleu_1': 82.95719844357977, 'bleu_2': 60.10602409638554, 'bleu_3': 44.99727817093086, 'bleu_4': 34.6048024012006, 'chrf': 62.009860687248306, 'chrf++': 62.09708711979037, 'rouge1': np.float64(82.96103034006693), 'rouge2': np.float64(69.75118374255663), 'rougeL': np.float64(77.54192771582815)}
+
+Example 1
+GLOSS: bạn làm sai chỗ làm phản ứng thế nào
+REF  : Thái độ của bạn khi làm sai ở nơi làm việc?
+PRED : Bạn đã làm sai chỗ nào và phản ứng thế nào?
+
+Example 2
+GLOSS: bạn nói đúng bạn nói chuyện với họ
+REF  : Có lẽ bạn nói đúng. Vâng, bạn có thể nói chuyện với họ.
+PRED : Bạn nói đúng. Hãy nói chuyện với họ.
+
+Example 3
+GLOSS: giá của bạn thảo luận được không ?
+REF  : Giá của bạn có thể thương lượng không?
+PRED : Giá của bạn có thể thảo luận được không?
+
+Example 4
+GLOSS: mẹ bạn thì sao bà giúp bạn không
+REF  : Còn mẹ bạn thì sao? Bà ấy có giúp bạn không?
+PRED : Mẹ bạn thì sao? Bà có thể giúp bạn không?
+
+Example 5
+GLOSS: nó thông tin nào nhận có không ?
+REF  : Nó có nhận bất kỳ kênh kỹ thuật số nào không?
+PRED : Nó có nhận thông tin nào không?
+New best BLEU: 44.3039, saving model...
+Epoch 8: 100%|██████████| 1190/1190 [11:24<00:00,  1.74it/s, avg_loss=2.3131]
+
+Average Epoch 8 Loss: 2.3131
+Evaluating: 100%|██████████| 75/75 [01:36<00:00,  1.29s/it]
+
+--- Evaluation Metrics ---
+{'bleu': 44.55572055959499, 'bleu_1': 83.00698697489865, 'bleu_2': 60.232625204268, 'bleu_3': 45.131878866818624, 'bleu_4': 34.7999501433379, 'chrf': 62.22659129211867, 'chrf++': 62.31151131641871, 'rouge1': np.float64(83.05629827634864), 'rouge2': np.float64(69.88255741142837), 'rougeL': np.float64(77.58130867963806)}
+
+Example 1
+GLOSS: bạn làm sai chỗ làm phản ứng thế nào
+REF  : Thái độ của bạn khi làm sai ở nơi làm việc?
+PRED : Bạn đã làm sai chỗ nào và phản ứng thế nào?
+
+Example 2
+GLOSS: bạn nói đúng bạn nói chuyện với họ
+REF  : Có lẽ bạn nói đúng. Vâng, bạn có thể nói chuyện với họ.
+PRED : Bạn nói đúng. Hãy nói chuyện với họ.
+
+Example 3
+GLOSS: giá của bạn thảo luận được không ?
+REF  : Giá của bạn có thể thương lượng không?
+PRED : Giá của bạn có thể thảo luận được không?
+
+Example 4
+GLOSS: mẹ bạn thì sao bà giúp bạn không
+REF  : Còn mẹ bạn thì sao? Bà ấy có giúp bạn không?
+PRED : Mẹ bạn thì sao? Bà có thể giúp bạn không?
+
+Example 5
+GLOSS: nó thông tin nào nhận có không ?
+REF  : Nó có nhận bất kỳ kênh kỹ thuật số nào không?
+PRED : Nó có nhận thông tin nào không?
+New best BLEU: 44.5557, saving model...
