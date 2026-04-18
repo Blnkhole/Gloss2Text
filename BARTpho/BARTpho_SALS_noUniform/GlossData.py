@@ -116,7 +116,7 @@ class GlossData(Dataset):
 
         labels = torch.tensor(y["input_ids"])
 
-        # ignore padding token trong loss
+        # ignore padding token in loss
         labels[labels == self.tokenizer.pad_token_id] = -100
 
         return {
