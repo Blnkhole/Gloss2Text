@@ -1,0 +1,89 @@
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_auth.py:93: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Downloading builder script: 
+ 9.01k/? [00:00<00:00, 256kB/s]
+Downloading builder script: 
+ 6.14k/? [00:00<00:00, 241kB/s]
+[Init] Preprocessor…
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[Init] GlossEncoder (XLM-RoBERTa-base fine-tune)…
+Loading weights: 100%
+ 199/199 [00:00<00:00, 603.17it/s, Materializing param=pooler.dense.weight]
+XLMRobertaModel LOAD REPORT from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+lm_head.dense.bias        | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+  [XLM-R] total=278,043,648 | frozen=249,101,568 | trainable=28,942,080 (top 4 layers)
+[Init] SemanticRecoveryModule…
+[Init] OrderRecoveryModule…
+[Init] RoleAwareFusion…
+[Init] RoleAttentionBias…
+[Init] ARTextDecoder (mBART-50-large fine-tune)…
+Loading weights: 100%
+ 519/519 [00:00<00:00, 775.51it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  [mBART] decoder total=458,670,080 | decoder trainable=151,154,688 | lm_head trainable=0
+
+[Init] Pipeline ready.
+
+Total params     : 1,676,006,179
+Trainable params : 199,013,923
+
+[Param groups]
+  new_modules             lr=3.00e-04  params=18,917,152
+  mbart_decoder           lr=3.00e-05  params=151,154,688
+  xlmr_top_layers         lr=9.00e-06  params=28,351,488
+
+/tmp/ipykernel_9694/3503945375.py:106: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler()
+Epoch 1 [train]:   0%|          | 0/2380 [00:00<?, ?it/s]/tmp/ipykernel_9694/3503945375.py:137: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(dtype=torch.bfloat16):
+Epoch 1 [train]:   0%|          | 8/2380 [00:03<14:27,  2.73it/s, loss=18.7860]
+  step=7 | loss=18.2192 | grad_norm=271678.062 | scale=65536
+Epoch 1 [train]:   1%|          | 16/2380 [00:05<12:24,  3.17it/s, loss=18.8462]
+  step=15 | loss=17.9250 | grad_norm=1167683.375 | scale=65536
+Epoch 1 [train]:   1%|          | 24/2380 [00:08<12:10,  3.22it/s, loss=17.6755]
+  step=23 | loss=15.0329 | grad_norm=229813.281 | scale=65536
+Epoch 1 [train]:   1%|▏         | 32/2380 [00:10<13:30,  2.90it/s, loss=16.9274]
+  step=31 | loss=14.8651 | grad_norm=156280.125 | scale=65536
+Epoch 1 [train]:   2%|▏         | 40/2380 [00:13<14:22,  2.71it/s, loss=16.3909]
+  step=39 | loss=14.0763 | grad_norm=150893.125 | scale=65536
+Epoch 1 [train]:   2%|▏         | 48/2380 [00:15<12:20,  3.15it/s, loss=15.9657]
+  step=47 | loss=13.7561 | grad_norm=148650.000 | scale=65536
+Epoch 1 [train]: 100%|██████████| 2380/2380 [13:00<00:00,  3.05it/s, loss=6.5622]
+Epoch 1 [val]: 100%|██████████| 298/298 [02:57<00:00,  1.67it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 1
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Bạn có có có,
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : 
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : 
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : 
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bạn có có có,
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 1 | BLEU=0.02 | BLEU-1=7.31 BLEU-2=0.63 BLEU-3=0.02 BLEU-4=0.01 | chrF=2.89 | chrF++=2.54 | ROUGE-1=13.40 ROUGE-2=2.39 ROUGE-L=10.10

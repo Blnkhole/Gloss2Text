@@ -1,0 +1,404 @@
+[Init] Preprocessor…
+[Init] GlossEncoder (XLM-RoBERTa-base fine-tune)…
+Loading weights: 100%
+ 199/199 [00:00<00:00, 595.87it/s, Materializing param=pooler.dense.weight]
+XLMRobertaModel LOAD REPORT from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.dense.bias        | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+  [XLM-R] total=278,043,648 | frozen=249,101,568 | trainable=28,942,080 (top 4 layers)
+[Init] SemanticRecoveryModule…
+[Init] OrderRecoveryModule…
+[Init] SemanticStructuralFusion…
+[Init] ARTextDecoder (mBART-50-large fine-tune)…
+Loading weights: 100%
+ 519/519 [00:00<00:00, 699.28it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  [mBART] decoder total=458,670,080 | decoder trainable=151,154,688 | lm_head trainable=0
+
+[Init] Pipeline ready.
+
+Total params     : 1,676,007,713
+Trainable params : 199,015,457
+
+[Param groups]
+  new_modules             lr=3.00e-04  params=18,918,689
+  mbart_decoder           lr=3.00e-05  params=151,154,688
+  xlmr_top_layers         lr=9.00e-06  params=28,351,488
+
+/tmp/ipykernel_10630/3503945375.py:106: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler()
+Epoch 1 [train]:   0%|          | 0/2380 [00:00<?, ?it/s]/tmp/ipykernel_10630/3503945375.py:137: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(dtype=torch.bfloat16):
+Epoch 1 [train]:   0%|          | 8/2380 [00:03<15:08,  2.61it/s, loss=25.4914]
+  step=7 | loss=26.9515 | grad_norm=586.030 | scale=65536
+Epoch 1 [train]:   1%|          | 16/2380 [00:06<14:39,  2.69it/s, loss=25.6619]
+  step=15 | loss=24.6959 | grad_norm=376.460 | scale=65536
+Epoch 1 [train]:   1%|          | 24/2380 [00:08<12:52,  3.05it/s, loss=23.9026]
+  step=23 | loss=19.1553 | grad_norm=959.228 | scale=65536
+Epoch 1 [train]:   1%|▏         | 32/2380 [00:11<12:45,  3.07it/s, loss=22.8898]
+  step=31 | loss=19.0883 | grad_norm=1130.617 | scale=65536
+Epoch 1 [train]:   2%|▏         | 40/2380 [00:13<12:46,  3.05it/s, loss=21.6614]
+  step=39 | loss=15.4837 | grad_norm=853.826 | scale=65536
+Epoch 1 [train]:   2%|▏         | 48/2380 [00:16<23:14,  1.67it/s, loss=20.5508]
+  step=47 | loss=14.2257 | grad_norm=261.291 | scale=65536
+Epoch 1 [train]: 100%|██████████| 2380/2380 [12:53<00:00,  3.08it/s, loss=5.1483]
+Epoch 1 [val]: 100%|██████████| 298/298 [02:11<00:00,  2.27it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 1
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Bạn có thể cho chúng tôi biết những gì về cuộc sống của bạn?
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Vâng, tôi sẽ trả tiền cho bạn.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Vâng, tôi sẽ trả tiền cho anh.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Vâng, tôi sẽ trả tiền cho bạn.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Ồ, chúng ta sẽ gặp nhau ở đâu?
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 1 | BLEU=1.66 | BLEU-1=18.60 BLEU-2=3.58 BLEU-3=0.77 BLEU-4=0.27 | chrF=12.96 | chrF++=12.20 | ROUGE-1=39.34 ROUGE-2=11.82 ROUGE-L=29.72
+Epoch 2 [train]:   0%|          | 8/2380 [00:02<13:13,  2.99it/s, loss=3.3155]
+  step=7 | loss=3.4962 | grad_norm=12.502 | scale=65536
+Epoch 2 [train]:   1%|          | 16/2380 [00:05<14:01,  2.81it/s, loss=3.1649]
+  step=15 | loss=3.2370 | grad_norm=8.846 | scale=65536
+Epoch 2 [train]:   1%|          | 24/2380 [00:08<14:24,  2.72it/s, loss=3.1233]
+  step=23 | loss=2.7412 | grad_norm=10.921 | scale=65536
+Epoch 2 [train]:   1%|▏         | 32/2380 [00:10<12:46,  3.06it/s, loss=3.0316]
+  step=31 | loss=2.2007 | grad_norm=8.453 | scale=65536
+Epoch 2 [train]:   2%|▏         | 40/2380 [00:13<13:11,  2.96it/s, loss=2.9987]
+  step=39 | loss=2.5701 | grad_norm=11.929 | scale=65536
+Epoch 2 [train]:   2%|▏         | 48/2380 [00:15<12:57,  3.00it/s, loss=2.9923]
+  step=47 | loss=2.5113 | grad_norm=9.594 | scale=65536
+Epoch 2 [train]: 100%|██████████| 2380/2380 [12:41<00:00,  3.12it/s, loss=2.6384]
+Epoch 2 [val]: 100%|██████████| 298/298 [02:21<00:00,  2.10it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 2
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những người thợ điêu khắc luôn cẩn thận và cẩn thận trong công việc.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Tôi có thể giúp gì cho bạn?
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy rất tốt. Tôi cảm ơn bạn.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tối nay là tốt nhất.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Cơn sóng dữ dội kéo dài đến tận chân trời.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 2 | BLEU=9.43 | BLEU-1=42.05 BLEU-2=16.44 BLEU-3=7.31 BLEU-4=3.73 | chrF=25.36 | chrF++=25.23 | ROUGE-1=54.85 ROUGE-2=28.76 ROUGE-L=45.78
+Epoch 3 [train]:   0%|          | 8/2380 [00:03<14:41,  2.69it/s, loss=1.9671]
+  step=7 | loss=2.2903 | grad_norm=7.068 | scale=65536
+Epoch 3 [train]:   1%|          | 16/2380 [00:05<12:37,  3.12it/s, loss=1.9913]
+  step=15 | loss=2.5217 | grad_norm=8.101 | scale=65536
+Epoch 3 [train]:   1%|          | 24/2380 [00:07<12:53,  3.05it/s, loss=2.0203]
+  step=23 | loss=1.8808 | grad_norm=7.219 | scale=65536
+Epoch 3 [train]:   1%|▏         | 32/2380 [00:10<13:18,  2.94it/s, loss=1.9846]
+  step=31 | loss=2.0485 | grad_norm=7.064 | scale=65536
+Epoch 3 [train]:   2%|▏         | 40/2380 [00:13<13:49,  2.82it/s, loss=1.9900]
+  step=39 | loss=1.0177 | grad_norm=7.953 | scale=65536
+Epoch 3 [train]:   2%|▏         | 48/2380 [00:16<14:23,  2.70it/s, loss=2.0173]
+  step=47 | loss=2.0819 | grad_norm=9.847 | scale=65536
+Epoch 3 [train]: 100%|██████████| 2380/2380 [12:38<00:00,  3.14it/s, loss=1.9382]
+Epoch 3 [val]: 100%|██████████| 298/298 [02:28<00:00,  2.01it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 3
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những bức tranh lịch sử cần được bảo vệ cẩn thận.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy rất hạnh phúc. Cảm ơn bạn.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tối nay là tốt nhất.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh nhiễm trùng đường hôi rất nhanh lây lan đến môi trường.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 3 | BLEU=17.09 | BLEU-1=52.69 BLEU-2=25.95 BLEU-3=13.92 BLEU-4=7.97 | chrF=34.90 | chrF++=34.97 | ROUGE-1=64.15 ROUGE-2=40.71 ROUGE-L=55.63
+Epoch 4 [train]:   0%|          | 8/2380 [00:02<13:28,  2.93it/s, loss=1.6829]
+  step=7 | loss=1.1777 | grad_norm=7.142 | scale=65536
+Epoch 4 [train]:   1%|          | 16/2380 [00:05<13:25,  2.93it/s, loss=1.7161]
+  step=15 | loss=2.5369 | grad_norm=7.677 | scale=65536
+Epoch 4 [train]:   1%|          | 24/2380 [00:07<12:40,  3.10it/s, loss=1.6039]
+  step=23 | loss=1.0981 | grad_norm=6.180 | scale=65536
+Epoch 4 [train]:   1%|▏         | 32/2380 [00:10<13:19,  2.94it/s, loss=1.6165]
+  step=31 | loss=2.3971 | grad_norm=6.250 | scale=65536
+Epoch 4 [train]:   2%|▏         | 40/2380 [00:13<14:19,  2.72it/s, loss=1.6497]
+  step=39 | loss=1.9836 | grad_norm=7.438 | scale=65536
+Epoch 4 [train]:   2%|▏         | 48/2380 [00:15<13:02,  2.98it/s, loss=1.6316]
+  step=47 | loss=1.8209 | grad_norm=6.538 | scale=65536
+Epoch 4 [train]: 100%|██████████| 2380/2380 [12:45<00:00,  3.11it/s, loss=1.5603]
+Epoch 4 [val]: 100%|██████████| 298/298 [02:28<00:00,  2.00it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 4
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những trang phục truyền thống cần được bảo vệ cẩn thận.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy rất chán nản.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tối nay là tối nay.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh co giật thường lây lan nhanh chóng.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 4 | BLEU=20.93 | BLEU-1=58.06 BLEU-2=31.35 BLEU-3=18.23 BLEU-4=11.08 | chrF=39.15 | chrF++=39.22 | ROUGE-1=67.26 ROUGE-2=45.33 ROUGE-L=59.27
+Epoch 5 [train]:   0%|          | 8/2380 [00:02<13:36,  2.90it/s, loss=1.3065]
+  step=7 | loss=1.2134 | grad_norm=5.341 | scale=65536
+Epoch 5 [train]:   1%|          | 16/2380 [00:05<14:07,  2.79it/s, loss=1.3882]
+  step=15 | loss=1.3251 | grad_norm=6.572 | scale=65536
+Epoch 5 [train]:   1%|          | 24/2380 [00:08<13:42,  2.86it/s, loss=1.3235]
+  step=23 | loss=0.9925 | grad_norm=6.257 | scale=65536
+Epoch 5 [train]:   1%|▏         | 32/2380 [00:10<12:47,  3.06it/s, loss=1.2651]
+  step=31 | loss=1.2194 | grad_norm=5.269 | scale=65536
+Epoch 5 [train]:   2%|▏         | 40/2380 [00:13<14:32,  2.68it/s, loss=1.2551]
+  step=39 | loss=0.8051 | grad_norm=5.704 | scale=65536
+Epoch 5 [train]:   2%|▏         | 48/2380 [00:16<15:03,  2.58it/s, loss=1.2631]
+  step=47 | loss=0.7800 | grad_norm=7.227 | scale=65536
+Epoch 5 [train]: 100%|██████████| 2380/2380 [12:51<00:00,  3.09it/s, loss=1.3223]
+Epoch 5 [val]: 100%|██████████| 298/298 [02:35<00:00,  1.92it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 5
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những chiếc xe tải cần vận chuyển hàng hóa cẩn thận.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy rất chán nản công việc của mình.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tối nay là tốt.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh co giật thường lây lan nhanh chóng.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 5 | BLEU=24.01 | BLEU-1=58.52 BLEU-2=32.72 BLEU-3=19.97 BLEU-4=13.02 | chrF=42.23 | chrF++=42.21 | ROUGE-1=68.88 ROUGE-2=47.48 ROUGE-L=60.86
+Epoch 6 [train]:   0%|          | 8/2380 [00:02<14:43,  2.68it/s, loss=1.1808]
+  step=7 | loss=1.8635 | grad_norm=6.042 | scale=65536
+Epoch 6 [train]:   1%|          | 16/2380 [00:05<13:03,  3.02it/s, loss=1.1644]
+  step=15 | loss=1.0069 | grad_norm=5.853 | scale=65536
+Epoch 6 [train]:   1%|          | 24/2380 [00:08<13:13,  2.97it/s, loss=1.1302]
+  step=23 | loss=1.1001 | grad_norm=5.738 | scale=65536
+Epoch 6 [train]:   1%|▏         | 32/2380 [00:10<13:02,  3.00it/s, loss=1.1223]
+  step=31 | loss=1.2384 | grad_norm=5.831 | scale=65536
+Epoch 6 [train]:   2%|▏         | 40/2380 [00:13<12:58,  3.01it/s, loss=1.1713]
+  step=39 | loss=1.5050 | grad_norm=6.345 | scale=65536
+Epoch 6 [train]:   2%|▏         | 48/2380 [00:15<13:38,  2.85it/s, loss=1.1312]
+  step=47 | loss=0.6030 | grad_norm=5.556 | scale=65536
+Epoch 6 [train]: 100%|██████████| 2380/2380 [12:49<00:00,  3.09it/s, loss=1.2380]
+Epoch 6 [val]: 100%|██████████| 298/298 [02:34<00:00,  1.93it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 6
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những trang web quảng cáo cần đảm bảo chất lượng.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Hãy cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi đã nhận được một công việc. Tôi cảm thấy rất chán.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt. Tối nay tôi sẽ ở đây.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh nhân bị sốt xuất huyết nặng đã nhanh chóng hồi phục.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 6 | BLEU=24.98 | BLEU-1=60.05 BLEU-2=33.94 BLEU-3=20.66 BLEU-4=13.31 | chrF=43.59 | chrF++=43.62 | ROUGE-1=69.94 ROUGE-2=49.19 ROUGE-L=61.78
+Epoch 7 [train]:   0%|          | 8/2380 [00:02<13:20,  2.96it/s, loss=0.7526]
+  step=7 | loss=0.9176 | grad_norm=5.447 | scale=65536
+Epoch 7 [train]:   1%|          | 16/2380 [00:05<16:14,  2.43it/s, loss=0.8315]
+  step=15 | loss=0.9901 | grad_norm=4.982 | scale=65536
+Epoch 7 [train]:   1%|          | 24/2380 [00:08<13:55,  2.82it/s, loss=0.8663]
+  step=23 | loss=0.7376 | grad_norm=6.470 | scale=65536
+Epoch 7 [train]:   1%|▏         | 32/2380 [00:11<13:27,  2.91it/s, loss=0.8774]
+  step=31 | loss=0.8429 | grad_norm=6.679 | scale=65536
+Epoch 7 [train]:   2%|▏         | 40/2380 [00:14<13:45,  2.84it/s, loss=0.8699]
+  step=39 | loss=0.5899 | grad_norm=5.870 | scale=65536
+Epoch 7 [train]:   2%|▏         | 48/2380 [00:16<13:47,  2.82it/s, loss=0.8678]
+  step=47 | loss=0.6271 | grad_norm=67.491 | scale=65536
+Epoch 7 [train]: 100%|██████████| 2380/2380 [12:44<00:00,  3.11it/s, loss=0.9535]
+Epoch 7 [val]: 100%|██████████| 298/298 [02:35<00:00,  1.91it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 7
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những trang web bán hàng cần đảm bảo chất lượng.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi đang nhận được một công việc. Tôi cảm thấy rất chán.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tốt, bây giờ là 7 giờ.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh tim đập nhanh chóng lây lan khắp cộng đồng.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 7 | BLEU=26.29 | BLEU-1=61.64 BLEU-2=35.43 BLEU-3=21.88 BLEU-4=14.18 | chrF=45.08 | chrF++=45.14 | ROUGE-1=70.84 ROUGE-2=50.69 ROUGE-L=63.27
+Epoch 8 [train]:   0%|          | 8/2380 [00:02<13:14,  2.99it/s, loss=0.7397]
+  step=7 | loss=0.8255 | grad_norm=5.029 | scale=131072
+Epoch 8 [train]:   1%|          | 16/2380 [00:05<13:18,  2.96it/s, loss=0.7759]
+  step=15 | loss=0.5454 | grad_norm=5.428 | scale=131072
+Epoch 8 [train]:   1%|          | 24/2380 [00:07<13:14,  2.97it/s, loss=0.7904]
+  step=23 | loss=0.4916 | grad_norm=5.491 | scale=131072
+Epoch 8 [train]:   1%|▏         | 32/2380 [00:10<14:27,  2.71it/s, loss=0.7925]
+  step=31 | loss=1.1423 | grad_norm=6.020 | scale=131072
+Epoch 8 [train]:   2%|▏         | 40/2380 [00:13<13:50,  2.82it/s, loss=0.8464]
+  step=39 | loss=0.9094 | grad_norm=7.112 | scale=131072
+Epoch 8 [train]:   2%|▏         | 48/2380 [00:15<12:28,  3.12it/s, loss=0.8232]
+  step=47 | loss=1.0510 | grad_norm=6.029 | scale=131072
+Epoch 8 [train]: 100%|██████████| 2380/2380 [12:48<00:00,  3.10it/s, loss=0.8030]
+Epoch 8 [val]: 100%|██████████| 298/298 [02:41<00:00,  1.84it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 8
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những trang web thương mại cần đảm bảo chất lượng.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi nhận được một công việc khá ổn. Tôi cảm thấy khá chán.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tối nay là tốt.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh tim đã lây nhiễm qua đường hô hấp rất nhanh.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 8 | BLEU=26.79 | BLEU-1=60.78 BLEU-2=34.87 BLEU-3=21.54 BLEU-4=13.91 | chrF=45.60 | chrF++=45.66 | ROUGE-1=71.27 ROUGE-2=50.93 ROUGE-L=63.30
+Epoch 9 [train]:   0%|          | 8/2380 [00:02<13:30,  2.93it/s, loss=0.6376]
+  step=7 | loss=0.5132 | grad_norm=4.953 | scale=131072
+Epoch 9 [train]:   1%|          | 16/2380 [00:05<13:19,  2.96it/s, loss=0.6435]
+  step=15 | loss=0.4742 | grad_norm=5.702 | scale=131072
+Epoch 9 [train]:   1%|          | 24/2380 [00:08<14:32,  2.70it/s, loss=0.6543]
+  step=23 | loss=0.7496 | grad_norm=5.633 | scale=131072
+Epoch 9 [train]:   1%|▏         | 32/2380 [00:10<14:00,  2.79it/s, loss=0.6587]
+  step=31 | loss=0.4223 | grad_norm=5.114 | scale=131072
+Epoch 9 [train]:   2%|▏         | 40/2380 [00:13<12:35,  3.10it/s, loss=0.6532]
+  step=39 | loss=0.7131 | grad_norm=4.983 | scale=131072
+Epoch 9 [train]:   2%|▏         | 48/2380 [00:15<13:12,  2.94it/s, loss=0.6501]
+  step=47 | loss=0.7896 | grad_norm=5.505 | scale=131072
+Epoch 9 [train]: 100%|██████████| 2380/2380 [12:53<00:00,  3.08it/s, loss=0.6816]
+Epoch 9 [val]: 100%|██████████| 298/298 [02:34<00:00,  1.93it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 9
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những trang web cần đảm bảo chất lượng dịch vụ.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy chán nản công việc.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tốt hơn cho tôi bây giờ.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh tim đã gây hại nghiêm trọng đến tính mạng.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 9 | BLEU=26.78 | BLEU-1=62.78 BLEU-2=36.32 BLEU-3=22.63 BLEU-4=14.58 | chrF=45.57 | chrF++=45.68 | ROUGE-1=71.80 ROUGE-2=51.55 ROUGE-L=63.92
+Epoch 10 [train]:   0%|          | 8/2380 [00:02<13:26,  2.94it/s, loss=0.4818]
+  step=7 | loss=0.5889 | grad_norm=4.453 | scale=131072
+Epoch 10 [train]:   1%|          | 16/2380 [00:04<12:33,  3.14it/s, loss=0.5664]
+  step=15 | loss=0.9394 | grad_norm=5.812 | scale=131072
+Epoch 10 [train]:   1%|          | 24/2380 [00:07<12:44,  3.08it/s, loss=0.5326]
+  step=23 | loss=0.5412 | grad_norm=5.512 | scale=131072
+Epoch 10 [train]:   1%|▏         | 32/2380 [00:10<13:23,  2.92it/s, loss=0.5351]
+  step=31 | loss=0.5911 | grad_norm=4.963 | scale=131072
+Epoch 10 [train]:   2%|▏         | 40/2380 [00:12<14:30,  2.69it/s, loss=0.5206]
+  step=39 | loss=0.6128 | grad_norm=4.519 | scale=131072
+Epoch 10 [train]:   2%|▏         | 48/2380 [00:15<12:42,  3.06it/s, loss=0.5320]
+  step=47 | loss=0.3567 | grad_norm=5.286 | scale=131072
+Epoch 10 [train]: 100%|██████████| 2380/2380 [12:47<00:00,  3.10it/s, loss=0.5774]
+Epoch 10 [val]: 100%|██████████| 298/298 [02:33<00:00,  1.94it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 10
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những chú ong chăm chỉ đang cẩn thận đốt những viên đá quý.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi đang nhận công việc. Tôi cảm thấy rất chán.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tốt nhất là 7 giờ tối nay.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh tim đã gây tổn thương nghiêm trọng đến tính mạng.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 10 | BLEU=27.49 | BLEU-1=63.14 BLEU-2=36.93 BLEU-3=23.19 BLEU-4=15.30 | chrF=46.20 | chrF++=46.28 | ROUGE-1=72.05 ROUGE-2=52.53 ROUGE-L=64.29
+Epoch 11 [train]:   0%|          | 8/2380 [00:02<14:36,  2.71it/s, loss=0.5545]
+  step=7 | loss=0.6787 | grad_norm=5.941 | scale=131072
+Epoch 11 [train]:   1%|          | 16/2380 [00:05<14:27,  2.72it/s, loss=0.5461]
+  step=15 | loss=0.7875 | grad_norm=4.950 | scale=131072
+Epoch 11 [train]:   1%|          | 24/2380 [00:08<13:11,  2.98it/s, loss=0.5221]
+  step=23 | loss=0.1346 | grad_norm=4.308 | scale=131072
+Epoch 11 [train]:   1%|▏         | 32/2380 [00:10<13:07,  2.98it/s, loss=0.5198]
+  step=31 | loss=0.5604 | grad_norm=5.419 | scale=131072
+Epoch 11 [train]:   2%|▏         | 40/2380 [00:13<13:09,  2.96it/s, loss=0.5204]
+  step=39 | loss=0.5593 | grad_norm=4.723 | scale=131072
+Epoch 11 [train]:   2%|▏         | 48/2380 [00:16<13:12,  2.94it/s, loss=0.5056]
+  step=47 | loss=0.5889 | grad_norm=5.094 | scale=131072
+Epoch 11 [train]:  83%|████████▎ | 1968/2380 [10:32<02:13,  3.09it/s, loss=0.4890]

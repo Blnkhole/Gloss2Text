@@ -1,0 +1,17 @@
+Loading weights: 100%
+ 518/518 [00:51<00:00, 180.54it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+Testing...
+100%|██████████| 19/19 [00:53<00:00,  2.83s/it]
+bleu: 42.6996
+bleu_1: 81.0910
+bleu_2: 53.2886
+bleu_3: 34.2734
+bleu_4: 23.9758
+chrf: 63.6675
+chrf++: 64.3323
+rouge1: 83.9653
+rouge2: 67.5401
+rougeL: 75.2149
+Complete!

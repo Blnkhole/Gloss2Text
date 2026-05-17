@@ -1,0 +1,342 @@
+Map: 100%
+ 9518/9518 [00:11<00:00, 759.43 examples/s]
+Map: 100%
+ 1190/1190 [00:00<00:00, 1557.64 examples/s]
+Loading weights: 100%
+ 517/517 [00:01<00:00, 239.08it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+ [14280/14280 1:19:37, Epoch 6/6]
+Epoch	Training Loss	Validation Loss	Bleu	Chrf	Rouge1	Rouge2	Rougel
+1	1.451568	1.165615	0.418991	63.321629	0.833737	0.672905	0.746036
+2	0.992562	1.066393	0.433993	64.683910	0.838123	0.679701	0.748556
+3	0.804355	1.093994	0.435503	64.421702	0.839862	0.681116	0.746981
+4	0.463155	1.206964	0.446074	65.160956	0.844938	0.685901	0.755087
+5	0.296816	1.374710	0.448694	65.235480	0.844763	0.686952	0.754342
+6	0.205429	1.490020	0.450755	65.220892	0.842708	0.684807	0.752448
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: trang web giả mạo ngân hàng lừa đảo cẩn thận
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: cho tôi kiểm tra nhé
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi nhận một công việc
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tốt 8 giờ tối nay
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm lây nhiễm rất nhanh qua đường hô hấp
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: cho tôi kiểm tra nhé ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm lây nhiễm rất nhanh qua đường hô hấp
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:56<00:00, 56.22s/it]
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: kiểm tra cho tôi ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay giờ 8 tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm đường hô hấp lây nhiễm nhanh
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: trang web giả mạo ngân hàng cẩn thận
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: cho tôi kiểm tra ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán vô cùng tôi công việc nhận sẽ
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:09<00:00,  9.89s/it]
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: tôi kiểm tra cho được không ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán vô cùng tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm lây nhiễm nhanh qua đường hô hấp
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: kiểm tra cho tôi nhé ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: cho tôi kiểm tra ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi chán vô cùng tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm lây nhiễm rất nhanh qua hô hấp
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:11<00:00, 11.51s/it]
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: tôi kiểm tra cho ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ nhé
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm lây nhiễm nhanh qua đường hô hấp
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng để lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: tôi kiểm tra cho ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:15<00:00, 15.10s/it]
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng để lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: cho tôi kiểm tra ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm đường hô hấp lây nhiễm nhanh
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: tôi kiểm tra cho ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm đường hô hấp lây nhiễm nhanh
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:34<00:00, 34.47s/it]
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: cho tôi kiểm tra ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm đường hô hấp lây nhiễm nhanh
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: tôi kiểm tra cho ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm lây nhiễm rất nhanh qua đường hô hấp
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: những trang web giả mạo ngân hàng lừa đảo cẩn thận cần
+P: cẩn thận với những trang web giả mạo ngân hàng lừa đảo
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: cho tôi kiểm tra ?
+P: tôi kiểm tra cho ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: tôi công việc nhận tôi cảm thấy chán
+P: tôi cảm thấy chán tôi công việc nhận
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: tốt tối nay giờ 8
+P: tối nay 8 giờ tốt
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: bệnh cúm đường hô hấp lây nhiễm rất nhanh
+P: bệnh cúm đường hô hấp lây nhiễm nhanh
+------------------------------
+Writing model shards: 100%
+ 1/1 [00:22<00:00, 22.71s/it]
+There were missing keys in the checkpoint model loaded: ['lm_head.weight'].
+Writing model shards: 100%
+ 1/1 [00:09<00:00,  9.73s/it]
+tôi ghét nhất con dê
+tôi thịt heo thích nhất

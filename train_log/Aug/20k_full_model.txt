@@ -1,0 +1,242 @@
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_auth.py:93: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+[Init] Preprocessor…
+[Init] GlossEncoder (XLM-RoBERTa-base fine-tune)…
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%
+ 199/199 [00:00<00:00, 435.63it/s, Materializing param=pooler.dense.weight]
+XLMRobertaModel LOAD REPORT from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+lm_head.dense.bias        | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+  [XLM-R] total=278,043,648 | frozen=249,101,568 | trainable=28,942,080 (top 4 layers)
+[Init] SemanticRecoveryModule…
+[Init] OrderRecoveryModule…
+[Init] RoleAwareFusion…
+[Init] RoleAttentionBias…
+[Init] ARTextDecoder (mBART-50-large fine-tune)…
+Loading weights: 100%
+ 519/519 [00:00<00:00, 813.53it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+  [mBART] decoder total=458,670,080 | decoder trainable=151,154,688 | lm_head trainable=256,055,296
+/usr/local/lib/python3.12/dist-packages/torch/_compile.py:54: UserWarning: optimizer contains a parameter group with duplicate parameters; in future, this will cause an error; see github.com/pytorch/pytorch/issues/40967 for more information
+  return disable_fn(*args, **kwargs)
+
+[Init] Pipeline ready.
+
+Total params     : 1,676,005,412
+Trainable params : 455,068,452
+
+[Param groups]
+  new_modules             lr=3.00e-04  params=18,918,692
+  mbart_decoder           lr=3.00e-05  params=151,154,688
+  xlmr_top_layers         lr=9.00e-06  params=28,351,488
+  lm_head                 lr=6.00e-06  params=256,055,296
+
+Epoch 1 [train]: 100%|██████████| 5000/5000 [30:23<00:00,  2.74it/s, loss=4.2600]
+Epoch 1 [val]: 100%|██████████| 298/298 [03:03<00:00,  1.63it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 1
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Mọi người cần chú ý bảo vệ môi trường.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Tôi sẽ kiểm tra lại.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy rất cảm ơn vì đã giúp tôi.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt nhất là bây giờ.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Buổi chiều bạn có thể tập thể dục nhẹ nhàng để tăng cường sức khỏe.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 1 | val_loss=2.3583 | BLEU=6.53 | BLEU-1=33.59 BLEU-2=11.12 BLEU-3=4.23 BLEU-4=1.75 | chrF=21.74 | chrF++=21.46 | ROUGE-1=50.48 ROUGE-2=23.45 ROUGE-L=41.36
+Epoch   1 | train_loss=4.2600 | val_loss=2.3583 | BLEU=6.53
+Epoch 2 [train]: 100%|██████████| 5000/5000 [30:00<00:00,  2.78it/s, loss=2.0839]
+Epoch 2 [val]: 100%|██████████| 298/298 [02:53<00:00,  1.71it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 2
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những thanh toán viên cần cung cấp những thông tin liên quan đến ngân hàng.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi thấy công việc của tôi khá thú vị.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tốt nhất là bây giờ.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh đau thần kinh rất dễ lây lan.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 2 | val_loss=1.7429 | BLEU=17.38 | BLEU-1=54.99 BLEU-2=27.32 BLEU-3=14.78 BLEU-4=8.41 | chrF=35.20 | chrF++=35.37 | ROUGE-1=64.07 ROUGE-2=41.39 ROUGE-L=56.24
+Epoch   2 | train_loss=2.0839 | val_loss=1.7429 | BLEU=17.38
+[RoleAttentionBias] Activated.
+Epoch 3 [train]:   8%|▊         | 400/5000 [02:22<29:56,  2.56it/s, loss=1.5960][RoleBias][Epoch 3] entropy=0.0033 (uniform=1.099) | alpha=0.3104 | weights=[ 0.3008192  -0.00052806 -0.31043497]
+Epoch 3 [train]:  16%|█▌        | 800/5000 [04:45<28:16,  2.48it/s, loss=1.6106][RoleBias][Epoch 3] entropy=0.0030 (uniform=1.099) | alpha=0.3234 | weights=[ 3.0095813e-01  7.7480072e-05 -3.2337478e-01]
+Epoch 3 [train]:  24%|██▍       | 1200/5000 [07:09<25:48,  2.45it/s, loss=1.5936][RoleBias][Epoch 3] entropy=0.0028 (uniform=1.099) | alpha=0.3375 | weights=[ 0.299803   -0.00078106 -0.33754203]
+Epoch 3 [train]:  32%|███▏      | 1600/5000 [09:34<22:31,  2.52it/s, loss=1.5935][RoleBias][Epoch 3] entropy=0.0023 (uniform=1.099) | alpha=0.3507 | weights=[ 3.0053601e-01 -1.6666834e-04 -3.5065562e-01]
+Epoch 3 [train]:  40%|████      | 2000/5000 [11:58<19:31,  2.56it/s, loss=1.5912][RoleBias][Epoch 3] entropy=0.0024 (uniform=1.099) | alpha=0.3649 | weights=[ 0.29914576 -0.00046351 -0.3648922 ]
+Epoch 3 [train]:  48%|████▊     | 2400/5000 [14:24<19:30,  2.22it/s, loss=1.5849][RoleBias][Epoch 3] entropy=0.0024 (uniform=1.099) | alpha=0.3780 | weights=[ 0.29719087 -0.00223105 -0.37796658]
+Epoch 3 [train]:  56%|█████▌    | 2800/5000 [16:48<14:42,  2.49it/s, loss=1.5727][RoleBias][Epoch 3] entropy=0.0018 (uniform=1.099) | alpha=0.3903 | weights=[ 0.29721332 -0.00207643 -0.3903239 ]
+Epoch 3 [train]:  64%|██████▍   | 3200/5000 [19:12<11:38,  2.58it/s, loss=1.5633][RoleBias][Epoch 3] entropy=0.0018 (uniform=1.099) | alpha=0.4045 | weights=[ 0.29723972 -0.00285812 -0.4044822 ]
+Epoch 3 [train]:  72%|███████▏  | 3600/5000 [21:36<09:39,  2.42it/s, loss=1.5561][RoleBias][Epoch 3] entropy=0.0020 (uniform=1.099) | alpha=0.4170 | weights=[ 0.29626647 -0.00621077 -0.41703218]
+Epoch 3 [train]:  80%|████████  | 4000/5000 [24:01<06:45,  2.46it/s, loss=1.5498][RoleBias][Epoch 3] entropy=0.0015 (uniform=1.099) | alpha=0.4307 | weights=[ 0.29444456 -0.0094325  -0.43068   ]
+Epoch 3 [train]:  88%|████████▊ | 4400/5000 [26:25<03:48,  2.63it/s, loss=1.5454][RoleBias][Epoch 3] entropy=0.0016 (uniform=1.099) | alpha=0.4434 | weights=[ 0.2947194  -0.00965516 -0.44339874]
+Epoch 3 [train]:  96%|█████████▌| 4800/5000 [28:50<01:17,  2.57it/s, loss=1.5399][RoleBias][Epoch 3] entropy=0.0017 (uniform=1.099) | alpha=0.4561 | weights=[ 0.29463437 -0.00953812 -0.45607027]
+Epoch 3 [train]: 100%|██████████| 5000/5000 [30:02<00:00,  2.77it/s, loss=1.5358]
+Epoch 3 [val]: 100%|██████████| 298/298 [02:55<00:00,  1.70it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 3
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những người lính cứu hỏa cần cẩn thận giữ hàng rào cản giao thông.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy rất chán.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tối nay.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh còi cầm đường hô hấp rất phổ biến.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 3 | val_loss=1.4942 | BLEU=24.02 | BLEU-1=63.16 BLEU-2=35.61 BLEU-3=21.76 BLEU-4=14.10 | chrF=42.26 | chrF++=42.43 | ROUGE-1=69.96 ROUGE-2=49.72 ROUGE-L=62.39
+Epoch   3 | train_loss=1.5358 | val_loss=1.4942 | BLEU=24.02
+Epoch 4 [train]:   8%|▊         | 400/5000 [02:22<32:18,  2.37it/s, loss=1.2428][RoleBias][Epoch 4] entropy=0.0022 (uniform=1.099) | alpha=0.4752 | weights=[ 0.29478    -0.0095916  -0.47521806]
+Epoch 4 [train]:  16%|█▌        | 800/5000 [04:45<28:24,  2.46it/s, loss=1.2452][RoleBias][Epoch 4] entropy=0.0020 (uniform=1.099) | alpha=0.4883 | weights=[ 0.29372266 -0.01045777 -0.48830196]
+Epoch 4 [train]:  24%|██▍       | 1200/5000 [07:09<24:22,  2.60it/s, loss=1.2462][RoleBias][Epoch 4] entropy=nan (uniform=1.099) | alpha=0.4996 | weights=[ 0.29294038 -0.00973054 -0.4996357 ]
+Epoch 4 [train]:  32%|███▏      | 1600/5000 [09:33<21:59,  2.58it/s, loss=1.2342][RoleBias][Epoch 4] entropy=0.0010 (uniform=1.099) | alpha=0.5106 | weights=[ 0.29190257 -0.01020783 -0.5105531 ]
+Epoch 4 [train]:  40%|████      | 2000/5000 [11:58<20:20,  2.46it/s, loss=1.2353][RoleBias][Epoch 4] entropy=0.0013 (uniform=1.099) | alpha=0.5224 | weights=[ 0.2934629  -0.00830411 -0.52239674]
+Epoch 4 [train]:  48%|████▊     | 2400/5000 [14:23<17:14,  2.51it/s, loss=1.2292][RoleBias][Epoch 4] entropy=0.0012 (uniform=1.099) | alpha=0.5323 | weights=[ 0.29187626 -0.00987881 -0.532298  ]
+Epoch 4 [train]:  56%|█████▌    | 2800/5000 [16:47<13:57,  2.63it/s, loss=1.2298][RoleBias][Epoch 4] entropy=0.0011 (uniform=1.099) | alpha=0.5434 | weights=[ 0.2909232  -0.01220794 -0.54342264]
+Epoch 4 [train]:  64%|██████▍   | 3200/5000 [19:10<12:48,  2.34it/s, loss=1.2272][RoleBias][Epoch 4] entropy=0.0009 (uniform=1.099) | alpha=0.5541 | weights=[ 0.29061538 -0.01245828 -0.5540819 ]
+Epoch 4 [train]:  72%|███████▏  | 3600/5000 [21:34<09:36,  2.43it/s, loss=1.2257][RoleBias][Epoch 4] entropy=0.0012 (uniform=1.099) | alpha=0.5632 | weights=[ 0.29013205 -0.0125471  -0.56319994]
+Epoch 4 [train]:  80%|████████  | 4000/5000 [23:58<06:18,  2.65it/s, loss=1.2252][RoleBias][Epoch 4] entropy=0.0009 (uniform=1.099) | alpha=0.5724 | weights=[ 0.28955424 -0.01347265 -0.5723745 ]
+Epoch 4 [train]:  88%|████████▊ | 4400/5000 [26:21<03:50,  2.60it/s, loss=1.2287][RoleBias][Epoch 4] entropy=nan (uniform=1.099) | alpha=0.5804 | weights=[ 0.28950557 -0.01304801 -0.5803756 ]
+Epoch 4 [train]:  96%|█████████▌| 4800/5000 [28:45<01:25,  2.34it/s, loss=1.2273][RoleBias][Epoch 4] entropy=0.0011 (uniform=1.099) | alpha=0.5898 | weights=[ 0.289562   -0.01448208 -0.58978087]
+Epoch 4 [train]: 100%|██████████| 5000/5000 [29:57<00:00,  2.78it/s, loss=1.2252]
+Epoch 4 [val]: 100%|██████████| 298/298 [03:01<00:00,  1.64it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 4
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những trang web bán hàng cần được đảm bảo về chất lượng.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy rất chán nản công việc của mình.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tối nay.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh cảm cúm rất nhanh chóng lây lan khắp mọi nơi.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 4 | val_loss=1.3875 | BLEU=27.91 | BLEU-1=66.07 BLEU-2=39.35 BLEU-3=25.12 BLEU-4=16.97 | chrF=46.45 | chrF++=46.57 | ROUGE-1=72.83 ROUGE-2=53.79 ROUGE-L=65.50
+Epoch   4 | train_loss=1.2252 | val_loss=1.3875 | BLEU=27.91
+Epoch 5 [train]:   8%|▊         | 400/5000 [02:21<32:17,  2.37it/s, loss=0.9785][RoleBias][Epoch 5] entropy=0.0008 (uniform=1.099) | alpha=0.6006 | weights=[ 0.28702635 -0.01711685 -0.6005916 ]
+Epoch 5 [train]:  16%|█▌        | 800/5000 [04:44<26:07,  2.68it/s, loss=0.9891][RoleBias][Epoch 5] entropy=0.0008 (uniform=1.099) | alpha=0.6074 | weights=[ 0.28680253 -0.01644297 -0.6073798 ]
+Epoch 5 [train]:  24%|██▍       | 1200/5000 [07:08<24:05,  2.63it/s, loss=1.1007][RoleBias][Epoch 5] entropy=0.0007 (uniform=1.099) | alpha=0.6128 | weights=[ 0.2870699  -0.01551449 -0.6128233 ]
+Epoch 5 [train]:  32%|███▏      | 1600/5000 [09:31<22:02,  2.57it/s, loss=1.0797][RoleBias][Epoch 5] entropy=0.0008 (uniform=1.099) | alpha=0.6178 | weights=[ 0.28849533 -0.01472203 -0.6177502 ]
+Epoch 5 [train]:  40%|████      | 2000/5000 [11:56<21:08,  2.36it/s, loss=1.0616][RoleBias][Epoch 5] entropy=0.0008 (uniform=1.099) | alpha=0.6225 | weights=[ 0.28846508 -0.0146898  -0.6224954 ]
+Epoch 5 [train]:  48%|████▊     | 2400/5000 [14:18<17:13,  2.51it/s, loss=1.0528][RoleBias][Epoch 5] entropy=0.0008 (uniform=1.099) | alpha=0.6270 | weights=[ 0.28879872 -0.01338928 -0.6270411 ]
+Epoch 5 [train]:  56%|█████▌    | 2800/5000 [16:41<14:05,  2.60it/s, loss=1.0489][RoleBias][Epoch 5] entropy=0.0010 (uniform=1.099) | alpha=0.6316 | weights=[ 0.2892151  -0.00905881 -0.6315959 ]
+Epoch 5 [train]:  64%|██████▍   | 3200/5000 [19:04<11:28,  2.61it/s, loss=1.0436][RoleBias][Epoch 5] entropy=0.0010 (uniform=1.099) | alpha=0.6369 | weights=[ 0.28848222 -0.00902262 -0.63687044]
+Epoch 5 [train]:  72%|███████▏  | 3600/5000 [21:28<09:43,  2.40it/s, loss=1.0426][RoleBias][Epoch 5] entropy=nan (uniform=1.099) | alpha=0.6407 | weights=[ 0.28867912 -0.00889322 -0.6407241 ]
+Epoch 5 [train]:  80%|████████  | 4000/5000 [23:51<06:52,  2.42it/s, loss=1.0409][RoleBias][Epoch 5] entropy=0.0008 (uniform=1.099) | alpha=0.6449 | weights=[ 0.2881938  -0.00936722 -0.64486015]
+Epoch 5 [train]:  88%|████████▊ | 4400/5000 [26:15<04:00,  2.50it/s, loss=1.0370][RoleBias][Epoch 5] entropy=0.0007 (uniform=1.099) | alpha=0.6485 | weights=[ 0.287398   -0.00991738 -0.6485362 ]
+Epoch 5 [train]:  96%|█████████▌| 4800/5000 [28:40<01:18,  2.53it/s, loss=1.0324][RoleBias][Epoch 5] entropy=0.0007 (uniform=1.099) | alpha=0.6512 | weights=[ 0.2879498  -0.0095106  -0.65122753]
+Epoch 5 [train]: 100%|██████████| 5000/5000 [29:52<00:00,  2.79it/s, loss=1.0331]
+Epoch 5 [val]: 100%|██████████| 298/298 [02:56<00:00,  1.69it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 5
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những trang web cần đảm bảo chất lượng.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy chán nản công việc.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tối nay là 8 giờ.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh co giật đường hô hấp rất nhanh và dễ lây lan.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 5 | val_loss=1.3320 | BLEU=29.55 | BLEU-1=67.07 BLEU-2=40.90 BLEU-3=26.58 BLEU-4=18.21 | chrF=47.97 | chrF++=48.09 | ROUGE-1=74.17 ROUGE-2=55.37 ROUGE-L=66.72
+Epoch   5 | train_loss=1.0331 | val_loss=1.3320 | BLEU=29.55
+Epoch 6 [train]:   8%|▊         | 400/5000 [02:21<28:57,  2.65it/s, loss=0.8433][RoleBias][Epoch 6] entropy=nan (uniform=1.099) | alpha=0.6556 | weights=[ 0.28741    -0.01192737 -0.6556191 ]
+Epoch 6 [train]:  16%|█▌        | 800/5000 [04:45<28:17,  2.47it/s, loss=0.8264][RoleBias][Epoch 6] entropy=0.0008 (uniform=1.099) | alpha=0.6567 | weights=[ 0.28662953 -0.01016438 -0.65674365]
+Epoch 6 [train]:  24%|██▍       | 1200/5000 [07:08<26:09,  2.42it/s, loss=0.8266][RoleBias][Epoch 6] entropy=0.0005 (uniform=1.099) | alpha=0.6595 | weights=[ 0.28598115 -0.00730079 -0.6594679 ]
+Epoch 6 [train]:  32%|███▏      | 1600/5000 [09:31<21:38,  2.62it/s, loss=0.8326][RoleBias][Epoch 6] entropy=0.0005 (uniform=1.099) | alpha=0.6621 | weights=[ 0.2857342  -0.00676777 -0.6620859 ]
+Epoch 6 [train]:  40%|████      | 2000/5000 [11:55<19:36,  2.55it/s, loss=0.8311][RoleBias][Epoch 6] entropy=0.0005 (uniform=1.099) | alpha=0.6630 | weights=[ 0.28505236 -0.00787165 -0.66300625]
+Epoch 6 [train]:  48%|████▊     | 2400/5000 [14:19<16:53,  2.57it/s, loss=0.8299][RoleBias][Epoch 6] entropy=0.0003 (uniform=1.099) | alpha=0.6653 | weights=[ 0.28490025 -0.0080087  -0.6653091 ]
+Epoch 6 [train]:  56%|█████▌    | 2800/5000 [16:43<15:09,  2.42it/s, loss=0.8326][RoleBias][Epoch 6] entropy=0.0003 (uniform=1.099) | alpha=0.6669 | weights=[ 0.28450212 -0.00914494 -0.6668482 ]
+Epoch 6 [train]:  64%|██████▍   | 3200/5000 [19:08<11:40,  2.57it/s, loss=0.8367][RoleBias][Epoch 6] entropy=0.0003 (uniform=1.099) | alpha=0.6708 | weights=[ 0.2836519  -0.01010625 -0.67075235]
+Epoch 6 [train]:  72%|███████▏  | 3600/5000 [21:32<08:52,  2.63it/s, loss=0.8397][RoleBias][Epoch 6] entropy=0.0003 (uniform=1.099) | alpha=0.6720 | weights=[ 0.2838516  -0.00879548 -0.67200106]
+Epoch 6 [train]:  80%|████████  | 4000/5000 [23:56<06:35,  2.53it/s, loss=0.8401][RoleBias][Epoch 6] entropy=0.0003 (uniform=1.099) | alpha=0.6717 | weights=[ 0.28196755 -0.00907282 -0.671666  ]
+Epoch 6 [train]:  88%|████████▊ | 4400/5000 [26:19<04:01,  2.48it/s, loss=0.8411][RoleBias][Epoch 6] entropy=0.0002 (uniform=1.099) | alpha=0.6738 | weights=[ 0.2820454  -0.00900087 -0.6737943 ]
+Epoch 6 [train]:  96%|█████████▌| 4800/5000 [28:42<01:15,  2.63it/s, loss=0.8432][RoleBias][Epoch 6] entropy=0.0003 (uniform=1.099) | alpha=0.6748 | weights=[ 0.2821825  -0.00856991 -0.6748266 ]
+Epoch 6 [train]: 100%|██████████| 5000/5000 [29:55<00:00,  2.79it/s, loss=0.8448]
+Epoch 6 [val]: 100%|██████████| 298/298 [03:01<00:00,  1.64it/s]
+
+────────────────────────────────────────────────────────────────────────
+  Sample predictions – Epoch 6
+────────────────────────────────────────────────────────────────────────
+  [1] Gloss : NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+      Hyp   : Những trang web cần phải đảm bảo chất lượng.
+      Ref   : Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+  [2] Gloss : CHO TÔI KIỂM TRA ?
+      Hyp   : Cho tôi kiểm tra.
+      Ref   : Cho tôi kiểm tra nhé?
+  [3] Gloss : TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+      Hyp   : Tôi cảm thấy rất chán nản công việc.
+      Ref   : Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+  [4] Gloss : TỐT TỐI NAY GIỜ 8
+      Hyp   : Tốt, tối nay là 8 giờ.
+      Ref   : Tốt, 8 giờ tối nay.
+  [5] Gloss : BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+      Hyp   : Bệnh cúm là một cơn hội chứng hô hấp rất nhanh chóng.
+      Ref   : Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+────────────────────────────────────────────────────────────────────────
+Epoch 6 | val_loss=1.3553 | BLEU=29.85 | BLEU-1=66.09 BLEU-2=40.12 BLEU-3=25.94 BLEU-4=17.67 | chrF=48.30 | chrF++=48.43 | ROUGE-1=74.07 ROUGE-2=55.65 ROUGE-L=66.93
+Epoch   6 | train_loss=0.8448 | val_loss=1.3553 | BLEU=29.85

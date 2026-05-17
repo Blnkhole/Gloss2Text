@@ -1,0 +1,37 @@
+## Gloss Encoder (XLM - RoBERTa)
+
+- Freeze: embeddings + 8 layer (layer 0–7)
+- Train: 4 layer (layer 8–11)
+
+## Gloss Decoder (mBART) 
+
+- Freeze:
+
+	mBART Encoder
+
+	Shared embeddings
+
+	Decoder self-attention
+
+	lm_head (Test Option)
+
+
+- Train:
+
+	Decoder cross-attention + layer norm 
+
+	Decoder FFN (fc1, fc2, final_layer_norm)
+
+
+## Train from scratch:
+
+	SemanticRecoveryModuleWithRole
+
+	OrderRecoveryModule
+
+	SemanticStructuralFusion
+
+	Projector
+	
+
+ 

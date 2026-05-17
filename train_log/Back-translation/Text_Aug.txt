@@ -1,0 +1,293 @@
+######
+Note
+
+Embedding model : "paraphrase-multilingual-MiniLM-L12-v2"
+FAISS model 
+
+Pool dataset : phomt (train set) : 2,977,999 corpus vn - eng
+
+Greedy: highest cosine sim (200k text)  
+
+######
+
+Loading data...
+Seed: 12,000 | Pool: 2,977,999
+Selecting top 200,000 samples from pool.
+Loading embedding model: paraphrase-multilingual-MiniLM-L12-v2
+modules.json: 100%
+ 229/229 [00:00<00:00, 19.8kB/s]
+config_sentence_transformers.json: 100%
+ 122/122 [00:00<00:00, 15.1kB/s]
+README.md: 
+ 3.89k/? [00:00<00:00, 389kB/s]
+sentence_bert_config.json: 100%
+ 53.0/53.0 [00:00<00:00, 5.58kB/s]
+config.json: 100%
+ 645/645 [00:00<00:00, 59.4kB/s]
+model.safetensors: 100%
+ 471M/471M [00:04<00:00, 104MB/s]
+Loading weights: 100%
+ 199/199 [00:00<00:00, 610.93it/s, Materializing param=pooler.dense.weight]
+BertModel LOAD REPORT from: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+tokenizer_config.json: 100%
+ 526/526 [00:00<00:00, 33.4kB/s]
+tokenizer.json: 100%
+ 9.08M/9.08M [00:00<00:00, 45.3MB/s]
+special_tokens_map.json: 100%
+ 239/239 [00:00<00:00, 22.5kB/s]
+config.json: 100%
+ 190/190 [00:00<00:00, 18.7kB/s]
+Encoding seed texts...
+Batches: 100%
+ 94/94 [00:04<00:00, 32.34it/s]
+Building FAISS index on seed embeddings...
+Index ready with 12,000 vectors.
+Searching pool in chunks...
+  Processed 50,000/2,977,999 | heap size: 50,000
+  Processed 100,000/2,977,999 | heap size: 100,000
+  Processed 150,000/2,977,999 | heap size: 150,000
+  Processed 200,000/2,977,999 | heap size: 200,000
+  Processed 250,000/2,977,999 | heap size: 200,000
+  Processed 300,000/2,977,999 | heap size: 200,000
+  Processed 350,000/2,977,999 | heap size: 200,000
+  Processed 400,000/2,977,999 | heap size: 200,000
+  Processed 450,000/2,977,999 | heap size: 200,000
+  Processed 500,000/2,977,999 | heap size: 200,000
+  Processed 550,000/2,977,999 | heap size: 200,000
+  Processed 600,000/2,977,999 | heap size: 200,000
+  Processed 650,000/2,977,999 | heap size: 200,000
+  Processed 700,000/2,977,999 | heap size: 200,000
+  Processed 750,000/2,977,999 | heap size: 200,000
+  Processed 800,000/2,977,999 | heap size: 200,000
+  Processed 850,000/2,977,999 | heap size: 200,000
+  Processed 900,000/2,977,999 | heap size: 200,000
+  Processed 950,000/2,977,999 | heap size: 200,000
+  Processed 1,000,000/2,977,999 | heap size: 200,000
+  Processed 1,050,000/2,977,999 | heap size: 200,000
+  Processed 1,100,000/2,977,999 | heap size: 200,000
+  Processed 1,150,000/2,977,999 | heap size: 200,000
+  Processed 1,200,000/2,977,999 | heap size: 200,000
+  Processed 1,250,000/2,977,999 | heap size: 200,000
+  Processed 1,300,000/2,977,999 | heap size: 200,000
+  Processed 1,350,000/2,977,999 | heap size: 200,000
+  Processed 1,400,000/2,977,999 | heap size: 200,000
+  Processed 1,450,000/2,977,999 | heap size: 200,000
+  Processed 1,500,000/2,977,999 | heap size: 200,000
+  Processed 1,550,000/2,977,999 | heap size: 200,000
+  Processed 1,600,000/2,977,999 | heap size: 200,000
+  Processed 1,650,000/2,977,999 | heap size: 200,000
+  Processed 1,700,000/2,977,999 | heap size: 200,000
+  Processed 1,750,000/2,977,999 | heap size: 200,000
+  Processed 1,800,000/2,977,999 | heap size: 200,000
+  Processed 1,850,000/2,977,999 | heap size: 200,000
+  Processed 1,900,000/2,977,999 | heap size: 200,000
+  Processed 1,950,000/2,977,999 | heap size: 200,000
+  Processed 2,000,000/2,977,999 | heap size: 200,000
+  Processed 2,050,000/2,977,999 | heap size: 200,000
+  Processed 2,100,000/2,977,999 | heap size: 200,000
+  Processed 2,150,000/2,977,999 | heap size: 200,000
+  Processed 2,200,000/2,977,999 | heap size: 200,000
+  Processed 2,250,000/2,977,999 | heap size: 200,000
+  Processed 2,300,000/2,977,999 | heap size: 200,000
+  Processed 2,350,000/2,977,999 | heap size: 200,000
+  Processed 2,400,000/2,977,999 | heap size: 200,000
+  Processed 2,450,000/2,977,999 | heap size: 200,000
+  Processed 2,500,000/2,977,999 | heap size: 200,000
+  Processed 2,550,000/2,977,999 | heap size: 200,000
+  Processed 2,600,000/2,977,999 | heap size: 200,000
+  Processed 2,650,000/2,977,999 | heap size: 200,000
+  Processed 2,700,000/2,977,999 | heap size: 200,000
+  Processed 2,750,000/2,977,999 | heap size: 200,000
+  Processed 2,800,000/2,977,999 | heap size: 200,000
+  Processed 2,850,000/2,977,999 | heap size: 200,000
+  Processed 2,900,000/2,977,999 | heap size: 200,000
+  Processed 2,950,000/2,977,999 | heap size: 200,000
+  Processed 2,977,999/2,977,999 | heap size: 200,000
+Sorting final candidates...
+Score stats — min: 0.8319 | mean: 0.8875 | max: 1.0000
+Saving 200,000 samples to: selected.tsv
+Done!
+
+
+##### 
+Eval
+
+Loading texts...
+Seed: 12,000 | Selected: 200,000 | Pool: 2,977,999
+
+Encoding with paraphrase-multilingual-MiniLM-L12-v2...
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_auth.py:93: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%
+ 199/199 [00:00<00:00, 375.16it/s, Materializing param=pooler.dense.weight]
+BertModel LOAD REPORT from: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Batches: 100%
+ 47/47 [00:04<00:00, 15.73it/s]
+Batches: 100%
+ 196/196 [00:12<00:00, 19.32it/s]
+Batches: 100%
+ 196/196 [00:13<00:00, 18.45it/s]
+Batches: 100%
+ 196/196 [00:14<00:00, 16.64it/s]
+Batches: 100%
+ 196/196 [00:15<00:00, 15.83it/s]
+Batches: 100%
+ 196/196 [00:35<00:00, 14.85it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 14.68it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 15.25it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 13.65it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 15.01it/s]
+Batches: 100%
+ 196/196 [00:37<00:00, 13.99it/s]
+Batches: 100%
+ 196/196 [00:37<00:00, 12.89it/s]
+Batches: 100%
+ 196/196 [00:35<00:00, 14.86it/s]
+Batches: 100%
+ 196/196 [00:35<00:00, 14.18it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 14.70it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 13.73it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 15.17it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 13.44it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 14.82it/s]
+Batches: 100%
+ 196/196 [00:34<00:00, 13.13it/s]
+Batches: 100%
+ 196/196 [00:35<00:00, 14.42it/s]
+Batches: 100%
+ 196/196 [00:26<00:00, 16.66it/s]
+Batches: 100%
+ 196/196 [00:18<00:00, 16.88it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.27it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.87it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 15.56it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.86it/s]
+Batches: 100%
+ 196/196 [00:18<00:00, 16.72it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.11it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.09it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 15.57it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 17.14it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.02it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.32it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.22it/s]
+Batches: 100%
+ 196/196 [00:20<00:00, 16.17it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.64it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 15.09it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.48it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.72it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.95it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.25it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 15.40it/s]
+Batches: 100%
+ 196/196 [00:20<00:00, 15.72it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 14.81it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 17.03it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.73it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 15.93it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.06it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 15.13it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 16.33it/s]
+Batches: 100%
+ 196/196 [00:19<00:00, 15.77it/s]
+Batches: 100%
+ 196/196 [00:50<00:00, 13.33it/s]
+Batches: 100%
+ 196/196 [00:53<00:00, 11.48it/s]
+Batches: 100%
+ 196/196 [00:59<00:00, 10.90it/s]
+Batches: 100%
+ 196/196 [00:54<00:00, 10.71it/s]
+Batches: 100%
+ 196/196 [00:54<00:00, 11.18it/s]
+Batches: 100%
+ 196/196 [00:54<00:00, 11.66it/s]
+Batches: 100%
+ 196/196 [00:53<00:00, 10.95it/s]
+Batches: 100%
+ 196/196 [00:53<00:00, 10.97it/s]
+Batches: 100%
+ 196/196 [00:54<00:00, 10.40it/s]
+Batches: 100%
+ 196/196 [00:54<00:00, 10.90it/s]
+Batches: 100%
+ 196/196 [00:54<00:00, 11.20it/s]
+Batches: 100%
+ 196/196 [00:54<00:00, 11.95it/s]
+Batches: 100%
+ 110/110 [00:27<00:00, 10.29it/s]
+
+Proximity to seed
+  Selected / Seed : 0.8875 ± 0.0418
+  Pool     / Seed : 0.6275 ± 0.1332
+  Improvement     : +0.2600
+
+Seed coverage
+  @ 0.7  selected: 79.3%  |  pool: 96.6%
+  @ 0.8  selected: 60.6%  |  pool: 70.7%
+  @ 0.9  selected: 27.4%  |  pool: 27.4%
+
+MMD vs seed
+  Selected vs Seed : 0.079187
+  Pool     vs Seed : 0.033827
+  Improvement      : -0.045360
+
+Intra-diversity
+  Seed     : 0.8671
+  Selected : 0.6430
+  Pool     : 0.8994
+
+\nMean Max Cosine Similarity\n\n\nCoverage: If the score (sim) between seeded and selected is greater than or equal to the threshold, that sentence is "covered".\nCoverage = number of sentences covered / total number of seeded sentences\n\n\nMMD (Maximum Mean Discrepancy) : MMD = E[K(A,A)] + E[K(B,B)] - 2·E[K(A,B)]\n\nlinear kernel K(x,y) = x · y (dot product):\n\nE[K(A,A)] = mean of all dot product pairs in A / how similar A is to itself\nE[K(B,B)] = mean of all dot product pairs in B / how similar B is to itself\nE[K(A,B)] = mean of all dot product pairs A×B / how similar A and B are to each other\n\n\nIntra-Diversity: Sample N sentences from the set, then calculate cosine similarity for all pairs\n\nIntra-diversity = 1 - mean(similarity)\n\nMeasure the internal diversity of a set:\nHigh : sentences in the set are diverse, with little repetition.\nLow : sentences are similar, biased towards one topic.\n\n

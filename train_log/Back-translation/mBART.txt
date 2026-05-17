@@ -1,0 +1,539 @@
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_auth.py:93: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+Map: 100%
+ 9518/9518 [00:05<00:00, 1948.62 examples/s]
+Map: 100%
+ 1190/1190 [00:00<00:00, 1916.34 examples/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%
+ 519/519 [00:01<00:00, 563.34it/s, Materializing param=model.shared.weight]
+The tied weights mapping and config for this model specifies to tie model.shared.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.decoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+The tied weights mapping and config for this model specifies to tie model.shared.weight to model.encoder.embed_tokens.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning
+trainable params: 1,179,648 || all params: 1,380,225,024 || trainable%: 0.0855
+ [23800/23800 1:44:32, Epoch 10/10]
+Epoch	Training Loss	Validation Loss	Acc	Tok Acc	Chrf	Wer	Bleu	Bleu 1	Bleu 2	Bleu 3	Bleu 4	Rouge1	Rouge2	Rougel
+1	1.035679	0.853229	2.605042	18.788073	50.102761	60.550005	28.438375	69.398440	41.400416	23.280802	14.031757	72.059950	52.900592	62.425699
+2	0.814152	0.791742	5.378151	24.802718	52.965499	56.187556	31.831158	74.038041	46.029153	27.378842	17.459750	74.980931	57.291408	65.728576
+3	0.782949	0.746597	6.638655	26.742532	57.678652	53.922248	36.256336	75.136945	47.254269	28.957219	19.339997	78.182952	60.310793	68.289527
+4	0.662598	0.751427	6.974790	29.148259	58.455662	51.360174	36.748724	76.659485	48.615169	30.143865	19.583131	79.539611	61.945244	70.394211
+5	0.637423	0.718724	7.058824	29.172038	60.454721	50.974379	39.336787	76.601836	49.300817	31.083871	21.010193	80.666043	63.359693	71.025566
+6	0.653214	0.772170	4.873950	33.757471	31.859019	75.546543	12.106656	81.106702	52.689517	33.275513	22.381930	38.009631	30.637204	34.027698
+7	0.490142	0.709116	10.084034	35.494803	56.695194	53.447423	36.485957	79.764491	53.118503	34.486909	23.613340	73.493123	59.117748	65.695789
+8	0.502907	0.707705	10.000000	36.486486	59.535032	50.529231	38.865968	80.494446	53.526355	34.650630	23.855544	77.129763	62.026957	68.730801
+9	0.470698	0.710719	10.672269	36.535536	59.039046	51.370066	38.556374	80.094267	53.354076	34.638077	23.982979	76.329595	61.448777	68.112817
+10	0.434139	0.712730	10.672269	36.611310	59.114914	51.073301	38.857483	80.129117	53.491551	34.918810	24.277457	76.513019	61.620117	68.405338
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: BẠN CẨN THẬN NHỮNG TRANG WEB GIẢI THẬT NGÂN HÀNG LỪA ĐẠO CẨN THẬN
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: BẠN KIỂM TRA CHÚNG TÔI
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: BẠN CẢM THẤY CẦN CẦN TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐT 8 GIỜ TỐI NAY
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÁM LÂY NHIỄM ĐƯỜNG HÔ HẤP NHANH
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: BẠN CẨN THẬN VỚI NHỮNG TRANG WEB GIẢM MÃ NGÂN HÀNG ĐỂ LỪA ĐÁO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: TÔI KIỂM TRA CHƯA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY CẦN MỘT CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+The following generation flags are not valid and may be ignored: ['early_stopping']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN NHỮNG TRANG WEB GIẢM GIÁ NGÂN HÀNG LỪA ĐÁ
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: BẠN KIỂM TRA CHO TÔI ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY CHƠI MỘT CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢM GIÁ NHẰM NGÂN HÀNG ĐỂ LỪA ĐÁO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: BẠN KIỂM TRA CHO TÔI ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỘT CƠN CHƠI CÓ TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ TỐI
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢ MÃ NGÂN HÀNG ĐÁNH
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: BẠN KIỂM TRA CHO TÔI ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MẠNH TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ TỐI
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN NHỮNG TRANG WEB GIẢ MÃ NGÂN HÀNG ĐỂ LỘI ĐỘI
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: BẠN KIỂM TRA CHO TÔI ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY CHÁN TÔI CÔNG VIỆC NHẬN MỘT
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ TỐI
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM QUA ĐƯỜNG HÔ HẤP NHANH CÓ THỂ
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢ MÃ NGÂN HÀNG ĐỂ LỪA ĐẢO LÀM
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: BẠN KIỂM TRA CHO TÔI ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MẠNH QUÁ TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ TỐI
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẢI
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG ĐỂ LỪA ĐẢO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: BẠN KIỂM TRA CHO TÔI ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY CHÁN TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN NHỮNG TRANG WEB GIẢ NHÂN HÀNG LỪA ĐẢO LÀM
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: TÔI KIỂM TRA CHO À ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY CHỢI TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ TỐI
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG LỪA ĐẢO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: BẠN KIỂM TRA CHO ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY CHỢI TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐT 8 GIỜ TỐI NAY
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢ MÃ NGÂN HÀNG LỪA ĐẢO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: TÔI KIỂM TRA ĐƯỢC KHÔNG ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY TỐI GIỜ 8
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG LỪA ĐẢO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: TÔI KIỂM TRA CHO À ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY TỐI GIỜ 8
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM HÔ HẤP LÂY NHIỄM NHANH
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN NHỮNG TRANG WEB GIẢ MẠN NGÂN HÀNG LỪA ĐẢO LÀM
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: TÔI KIỂM TRA NHÉ ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY TỐI 8 GIỜ
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢ MÃ NGÂN HÀNG LỪA ĐẢO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: TÔI KIỂM TRA CHO À ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM NHANH
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CẨN THẬN VỚI NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG ĐỂ LỪA ĐẢO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: TÔI KIỂM TRA ĐƯỢC KHÔNG ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY CHÁN TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY TỐI GIỜ 8
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẢI
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CHẨN THẬN NHỮNG TRANG WEB GIẢ MÃNG NGÂN HÀNG ĐỂ LỪA ĐẢO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: CHO TÔI KIỂM TRA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: 
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG LỪA ĐẢO CẨN THẬN
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: CHO TÔI KIỂM TRA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT QUÁ TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: 
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CHẨN THẬN NHỮNG TRANG WEB GIẢ MẪU NGÂN HÀNG LỪA ĐẢO ĐỂ LÀM
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: CHO TÔI KIỂM TRA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: CHẨN THẬN NHỮNG TRANG WEB GIẢ MÃNG NGÂN HÀNG LỪA ĐẢO ĐỂ LỪA ĐẢO
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: CHO TÔI KIỂM TRA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY TỐI GIỜ 8
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG LỪA ĐẢO CẨN THẬN
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: CHO TÔI KIỂM TRA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY GIỜ 8
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG LỪA ĐẢO CẨN THẬN
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: CHO TÔI KIỂM TRA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY 8 GIỜ
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG LỪA ĐẢO CẨN THẬN
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: CHO TÔI KIỂM TRA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY TỐI GIỜ 8
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+
+===== SAMPLES =====
+T: Cẩn thận với những trang web giả mạo ngân hàng để lừa đảo.
+R: NHỮNG TRANG WEB GIẢ MẠO NGÂN HÀNG LỪA ĐẢO CẨN THẬN CẦN
+P: NHỮNG TRANG WEB GIẢ MẠNH NGÂN HÀNG LỪA ĐẢO CẨN THẬN
+------------------------------
+T: Cho tôi kiểm tra nhé?
+R: CHO TÔI KIỂM TRA ?
+P: CHO TÔI KIỂM TRA ?
+------------------------------
+T: Tôi cảm thấy vô cùng chán. Tôi sẽ nhận một công việc.
+R: TÔI CÔNG VIỆC NHẬN TÔI CẢM THẤY CHÁN
+P: TÔI CẢM THẤY MỆT TÔI CÔNG VIỆC NHẬN
+------------------------------
+T: Tốt, 8 giờ tối nay.
+R: TỐT TỐI NAY GIỜ 8
+P: TỐI NAY TỐI GIỜ 8
+------------------------------
+T: Bệnh cúm có thể lây nhiễm rất nhanh qua đường hô hấp.
+R: BỆNH CÚM ĐƯỜNG HÔ HẤP LÂY NHIỄM RẤT NHANH
+P: BỆNH CÚM LÂY NHIỄM RẤT NHANH QUA ĐƯỜNG HÔ HẤP
+------------------------------
+TÔI CON DÊ GHÉT NHẤT
+TÔI THỊT HEO THÍCH NHẤT
